@@ -195,6 +195,7 @@
       catch (error) {
         console.log('Error:', error.message);
         TrackJS.track('Testing TrackJS!');
+        TrackJS.track(error);
       }
     });
 

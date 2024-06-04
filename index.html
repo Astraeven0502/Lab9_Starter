@@ -189,12 +189,12 @@
 
     let consoleGlobalBtn = errorBtns[14];
     consoleGlobalBtn.addEventListener('click', event =>{
-      TrackJS.track('Testing TrackJS!');
       try {
         throw new Error('An error occurred');
       }
       catch (error) {
         console.log('Error:', error.message);
+        TrackJS.track('Testing TrackJS!');
       }
     });
 

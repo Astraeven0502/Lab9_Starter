@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "879c73ad467a4e07bef499e4309fe30c"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                        
   <title>Lab 9</title>
 
   <style>
@@ -102,6 +110,94 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    let consoleLogBtn = errorBtns[0];
+    consoleLogBtn.addEventListener('click', event =>{
+      console.log('Console Log Button');
+    });
+
+    let consoleErrBtn = errorBtns[1];
+    consoleErrBtn.addEventListener('click', event =>{
+      console.error('Console Error Button');
+    }); 
+
+    let consoleCountBtn = errorBtns[2];
+    consoleCountBtn.addEventListener('click', event =>{
+      console.count('Console Count Button');
+    });
+
+    let consoleWarnBtn = errorBtns[3];
+    consoleWarnBtn.addEventListener('click', event =>{
+      console.warn('Console Warn Button');
+    });
+      
+    let consoleAssertBtn = errorBtns[4];
+    consoleAssertBtn.addEventListener('click', event =>{
+      console.assert(3 % 2 === 0, "%o", '3 mod 2 is not 0' );
+    });
+      
+    let consoleClearBtn = errorBtns[5];
+    consoleClearBtn.addEventListener('click', event =>{
+      console.clear();
+    });
+
+    let consoleDirBtn = errorBtns[6];
+    consoleDirBtn.addEventListener('click', event =>{
+      console.dir(consoleDirBtn);
+    });
+
+    let consoleXmlBtn = errorBtns[7];
+    consoleXmlBtn.addEventListener('click', event =>{
+      console.dirxml(consoleXmlBtn);
+    });
+
+    let consoleGroupStartBtn = errorBtns[8];
+    consoleGroupStartBtn.addEventListener('click', event =>{
+      console.group();
+    });
+
+    let consoleGroupEndBtn = errorBtns[9];
+    consoleGroupEndBtn.addEventListener('click', event =>{
+      console.groupEnd();
+    });
+
+    let consoleTableBtn = errorBtns[10];
+    consoleTableBtn.addEventListener('click', event =>{
+      console.table(["console", "table", "Button", consoleTableBtn]);
+    });
+    
+    let consoleStartTimeBtn = errorBtns[11];
+    consoleStartTimeBtn.addEventListener('click', event =>{
+      console.time('Timer button');
+    });
+
+    let consoleEndTimeBtn = errorBtns[12];
+    consoleEndTimeBtn.addEventListener('click', event =>{
+      console.timeEnd('Timer button');
+    });
+
+    let consoleTraceBtn = errorBtns[13];
+    consoleTraceBtn.addEventListener('click', event =>{
+      function foo() {
+        function bar() {
+          console.trace();
+        }
+        bar();
+      }
+      foo();
+    });
+
+    let consoleGlobalBtn = errorBtns[14];
+    consoleGlobalBtn.addEventListener('click', event =>{
+      TrackJS.track('Testing TrackJS!');
+      try {
+        throw new Error('An error occurred');
+      }
+      catch (error) {
+        console.log('Error:', error.message);
+      }
+    });
+
   </script>
 </body>
 
